@@ -1,0 +1,59 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: echo-server-v1
+  labels:
+    name: echo-server
+    version: v1
+spec:
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        name: echo-server
+        app: echo-server
+        version: v1
+    spec:
+      restartPolicy: Always
+      imagePullSecrets:
+      - name: gcr-json-key
+      containers:
+      - image: gcr.io/bitsx-vc-dev-poc/echo-server:v1
+        imagePullPolicy: Always
+        name: echo-server
+        resources:
+          requests:
+            cpu: "20m"
+            memory: "55M"
+          limits:
+            cpu: "100m"
+            memory: "100M"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 1323
+          initialDelaySeconds: 3
+          timeoutSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 1323
+          initialDelaySeconds: 3
+          timeoutSeconds: 10
+        env:
+        - name: ENVVARNAME
+          value: ENVVARVALUE
+        ports:
+        - containerPort: 1323
+          name: http
+        volumeMounts:
+        - mountPath: /data
+          name: data
+      volumes:
+        - name: data
+          emptyDir: {}

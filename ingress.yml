@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: echo-server-ingress
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/rewrite-target: /
+    # nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    # - host: k8s.memoryforcer.com
+    - http:
+        paths:
+          - path: /hello
+            backend:
+              serviceName: echo-server-svc
+              servicePort: 1323

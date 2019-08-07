@@ -1,0 +1,56 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: echo-server
+spec:
+  gateways:
+    - ingress-gateway
+  hosts:
+    - "*"
+    # - istio.memoryforcer.com
+  http:
+    # # Conditional Modification
+    # - match:
+    #   - headers:
+    #       end-user:
+    #         exact: jason
+    #   fault:
+    #     delay:
+    #       percent: 100
+    #       fixedDelay: 3s
+    #   route:
+    #     - destination:
+    #         host: echo-server-svc
+    #         subset: v2
+    #
+    # # Conditional By URL
+    # - match:
+    #   - uri:
+    #       prefix: /headers
+    #   route:
+    #   - destination:
+    #       host: echo-server-svc
+    #       subset: v2
+    # - match:
+    #   - uri:
+    #       prefix: /proxy
+    #   route:
+    #   - destination:
+    #       host: echo-server-svc
+    #       subset: v3
+
+    # Canary Deployment
+    - route:
+      - destination:
+          host: echo-server-svc
+      #     subset: v1
+      #   weight: 10
+      # - destination:
+      #     host: echo-server-svc
+      #     subset: v2
+      #   weight: 30
+      # - destination:
+      #     host: echo-server-svc
+      #     subset: v3
+      #   weight: 60
+      #
