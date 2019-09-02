@@ -16,3 +16,6 @@ The purpose of this project is for demonstrate the basic features of kubernetes.
 - Ingress 5min
 - Grafana 10min
 
+# Diagram
+
+![diagram](https://github.com/hlxwell/k8s-beginner-demo/raw/master/diagram.png)
