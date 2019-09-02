@@ -17,6 +17,8 @@ spec:
         name: echo-server
         app: echo-server
     spec:
+      securityContext:
+        runAsUser: 1000
       restartPolicy: Always
       imagePullSecrets:
       - name: gcr-json-key
