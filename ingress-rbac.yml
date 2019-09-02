@@ -3,7 +3,7 @@ kind: ClusterRole
 metadata:
   name: traefik-ingress-controller
 rules:
-  # 选定 apiGroups 里的 resources 的指定 verbs
+  # verbs to resources in apiGroups
   - apiGroups:
       - ""
     resources:
@@ -34,4 +34,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name:  default
-    namespace: traefik
+    namespace: default

@@ -1,6 +1,6 @@
 ############################
 # STEP 1 build executable binary
-# This is a intermediate docker image, will be deleted. 
+# This is a intermediate docker image, will be deleted.
 ############################
 
 FROM golang:alpine AS builder
@@ -39,6 +39,6 @@ RUN chown -R app:app /app/
 # Run as app user
 USER app
 
-EXPOSE 80
+EXPOSE 1323
 
 CMD ["./echo_server"]
