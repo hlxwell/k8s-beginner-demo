@@ -1,16 +1,16 @@
 # Readme
 The purpose of this project is for demonstrate the basic features of kubernetes.
 
-# Schedule for the tutorial
-- Diagram 1
-- Docker 10
-- Pod 10
-- Deployment & Demo (10)
+# Agenda for the Tutorial
+- Diagram 1min
+- Docker 10min
+- Pod 10min
+- Deployment & Demo 10min
     - update
     - rollback
     - resilience
     - scale
-- Service (5)
+- Service 5min
     - load balance
     - Selector
 - Ingress 5min
