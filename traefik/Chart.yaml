@@ -1,9 +1,9 @@
 apiVersion: v1
-appVersion: 1.7.9
+appVersion: 1.7.12
 description: A Traefik based Kubernetes ingress controller with Let's Encrypt support
 engine: gotpl
 home: https://traefik.io/
-icon: http://traefik.io/traefik.logo.png
+icon: https://docs.traefik.io/img/traefik.logo.png
 keywords:
 - traefik
 - ingress
@@ -22,4 +22,4 @@ name: traefik
 sources:
 - https://github.com/containous/traefik
 - https://github.com/helm/charts/tree/master/stable/traefik
-version: 1.67.0
+version: 1.70.2
