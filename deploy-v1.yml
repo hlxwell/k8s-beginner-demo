@@ -9,8 +9,8 @@ spec:
   replicas: 3
   strategy:
     rollingUpdate:
-      maxSurge: "1"
-      maxUnavailable: "1"
+      maxSurge: 1
+      maxUnavailable: 1
     type: RollingUpdate
   template:
     metadata:
@@ -36,13 +36,13 @@ spec:
         livenessProbe:
           httpGet:
             path: /
-            port: "1323"
+            port: 1323
           initialDelaySeconds: 3
           timeoutSeconds: 10
         readinessProbe:
           httpGet:
             path: /
-            port: "1323"
+            port: 1323
           initialDelaySeconds: 3
           timeoutSeconds: 10
         env:

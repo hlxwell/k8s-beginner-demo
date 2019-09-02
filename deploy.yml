@@ -1,10 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: echo-server-v3
+  name: echo-server
   labels:
     name: echo-server
-    version: v3
 spec:
   replicas: 3
   strategy:
@@ -17,7 +16,6 @@ spec:
       labels:
         name: echo-server
         app: echo-server
-        version: v3
     spec:
       restartPolicy: Always
       imagePullSecrets:
@@ -31,7 +29,7 @@ spec:
             cpu: "20m"
             memory: "55M"
           limits:
-            cpu: "100m"
+            cpu: "100m" # 100 milli-cpu == 0.1 cpu
             memory: "100M"
         livenessProbe:
           httpGet:
@@ -46,8 +44,8 @@ spec:
           initialDelaySeconds: 3
           timeoutSeconds: 10
         env:
-        - name: VERSION
-          value: v3
+        - name: ENVVARNAME
+          value: ENVVARVALUE
         ports:
         - containerPort: 1323
           name: http

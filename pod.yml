@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: v1
 kind: Pod
 metadata:
   name: echo-server-pod
@@ -25,15 +25,17 @@ spec:
         port: 1323
       initialDelaySeconds: 3
       timeoutSeconds: 10
+      periodSeconds: 10
     readinessProbe:
       httpGet:
         path: /
         port: 1323
       initialDelaySeconds: 3
       timeoutSeconds: 10
+      periodSeconds: 10
     env:
-    - name: ENVVARNAME
-      value: ENVVARVALUE
+    - name: VERSION
+      value: v1
     ports:
     - containerPort: 1323
       name: http

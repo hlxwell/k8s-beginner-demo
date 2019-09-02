@@ -46,8 +46,8 @@ spec:
           initialDelaySeconds: 3
           timeoutSeconds: 10
         env:
-        - name: ENVVARNAME
-          value: ENVVARVALUE
+        - name: VERSION
+          value: v2
         ports:
         - containerPort: 1323
           name: http
