@@ -3,7 +3,7 @@ The purpose of this project is for demonstrate the basic features of kubernetes.
 
 # Agenda for the Tutorial
 - Diagram 1min
-- Docker 10min
+- App & Dockerfile 10min
 - Pod 10min
 - Deployment & Demo 10min
     - update
@@ -13,8 +13,14 @@ The purpose of this project is for demonstrate the basic features of kubernetes.
 - Service 5min
     - load balance
     - Selector
+    - Service URL
 - Ingress 5min
 - Grafana 10min
+- Advanced (x min)
+    - Horizontal Pod Autoscaling
+    - Blue Green Deployment
+    - Canary Deployment
+    - Telepresence Introduction
 
 # Diagram
 
