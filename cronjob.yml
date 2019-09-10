@@ -15,6 +15,6 @@ spec:
             args:
             - /bin/sh
             - -c
-            - date; curl http://echo-server-svc:1323
+            - date; curl http://echo-server-svc:1323/?from=cronjob
           restartPolicy: OnFailure
       backoffLimit: 4
