@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: simple-health-checker
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        name: simple-health-checker
+    spec:
+      securityContext:
+        runAsUser: 1000
+      restartPolicy: Always
+      imagePullSecrets:
+      - name: gcr-json-key
+      containers:
+      - image: gcr.io/bitsx-vc-dev-poc/simple-health-checker:v1
+        imagePullPolicy: Always
+        name: health-checker
+        resources:
+          requests:
+            cpu: "20m"
+            memory: "55M"
+          limits:
+            cpu: "100m" # 100 milli-cpu == 0.1 cpu
+            memory: "100M"
