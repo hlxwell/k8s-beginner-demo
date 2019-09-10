@@ -3,6 +3,7 @@ kind: Job
 metadata:
   name: echo-server-checker-job
 spec:
+  # ttlSecondsAfterFinished: 100
   template:
     spec:
       containers:
