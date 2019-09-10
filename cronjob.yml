@@ -1,0 +1,19 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: echo-server-checker-cronjob
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: checker
+            image: hlxwell/netshoot
+            args:
+            - /bin/sh
+            - -c
+            - date; curl http://echo-server-svc:1323
+          restartPolicy: OnFailure
+      backoffLimit: 4
