@@ -22,6 +22,10 @@ The purpose of this project is for demonstrate the basic features of kubernetes.
     - Canary Deployment
     - Telepresence Introduction
 
-# Diagram
+# System Diagram
 
-![diagram](https://github.com/hlxwell/k8s-beginner-demo/raw/master/diagram.png)
+![diagram](https://github.com/hlxwell/k8s-beginner-demo/raw/master/docs/diagram.png)
+
+# Telepresence Diagram
+
+![telepresence](https://github.com/hlxwell/k8s-beginner-demo/raw/master/docs/telepresence.png)
