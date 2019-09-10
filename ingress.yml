@@ -15,3 +15,22 @@ spec:
             backend:
               serviceName: echo-server-svc
               servicePort: 1323
+    - http:
+        paths:
+          - path: /v1/hello
+            backend:
+              serviceName: echo-server-svc-v1
+              servicePort: 1323
+    - http:
+        paths:
+          - path: /v2/hello
+            backend:
+              serviceName: echo-server-svc-v2
+              servicePort: 1323
+    - http:
+        paths:
+          - path: /v3/hello
+            backend:
+              serviceName: echo-server-svc-v3
+              servicePort: 1323
+
