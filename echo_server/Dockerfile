@@ -1,6 +1,6 @@
 ############################
 # STEP 1 build executable binary
-# This is a intermediate docker image, will be deleted.
+# This is an intermediate docker image, will be deleted.
 ############################
 
 FROM golang:alpine AS builder
