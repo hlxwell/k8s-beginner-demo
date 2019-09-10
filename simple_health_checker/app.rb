@@ -6,4 +6,3 @@ while true
   puts Net::HTTP.get(uri)
   sleep 1
 end
-
