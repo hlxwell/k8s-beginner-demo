@@ -16,7 +16,7 @@ func HomeHandler(c echo.Context) error {
 		total += rand.Intn(1000)
 	}
 
-	log.Println("/ been visited at:", time.Now(), "-", total, "-", c.Request().Host)
+	log.Println(c.Request().RequestURI, "been visited at:", time.Now(), "-", total, "-", c.Request().Host)
 	return c.String(http.StatusOK, "Hello, World! version 1")
 }
 
