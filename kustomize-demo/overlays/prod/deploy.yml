@@ -1,0 +1,11 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: echo-server
+spec:
+  replicas: 100
+  strategy:
+    rollingUpdate:
+      maxSurge: 10
+      maxUnavailable: 10
+    type: RollingUpdate

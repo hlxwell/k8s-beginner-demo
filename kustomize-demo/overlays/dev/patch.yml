@@ -1,0 +1,9 @@
+- op: replace
+  path: /spec/replicas
+  value: 10
+- op: replace
+  path: /spec/strategy/rollingUpdate/maxSurge
+  value: 3
+- op: replace
+  path: /spec/strategy/rollingUpdate/maxUnavailable
+  value: 3

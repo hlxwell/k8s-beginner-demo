@@ -1,0 +1,10 @@
+bases:
+  - ../../base
+patchesJson6902:
+  - target:
+      version: v1beta1
+      group: extensions
+      name: echo-server
+      kind: Deployment
+    path: patch.yml
+namePrefix: dev-
