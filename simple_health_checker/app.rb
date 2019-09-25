@@ -1,8 +1,12 @@
 require 'net/http'
 
+host = (ENV['host'] || "echo-server-svc:1323")
+
 while true
-  puts "start to request: http://echo-server-svc:1323/?from=health-checker"
-  uri = URI('http://echo-server-svc:1323/?from=health-checker')
+  $stdout.puts "start to request: http://#{host}/?from=health-checker"
+  $stdout.flush
+  uri = URI("http://#{host}/?from=health-checker")
   puts Net::HTTP.get(uri)
   sleep 1
 end
+
