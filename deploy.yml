@@ -21,7 +21,7 @@ spec:
       imagePullSecrets:
       - name: gcr-json-key
       containers:
-      - image: gcr.io/bitsx-vc-dev-poc/echo-server:v1
+      - image: gcr.io/bitsx-vc-dev-poc/echo-server
         imagePullPolicy: Always
         name: echo-server
         resources:
@@ -36,12 +36,14 @@ spec:
             path: /
             port: 1323
           initialDelaySeconds: 3
+          periodSeconds: 20
           timeoutSeconds: 10
         readinessProbe:
           httpGet:
             path: /
             port: 1323
-          initialDelaySeconds: 3
+          initialDelaySeconds: 10
+          periodSeconds: 20
           timeoutSeconds: 10
         env:
         - name: ENVVARNAME
