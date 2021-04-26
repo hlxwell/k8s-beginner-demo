@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo-server
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: echo-server
+        image: echo-server

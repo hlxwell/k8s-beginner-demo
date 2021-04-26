@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: echo-server
@@ -9,6 +9,9 @@ spec:
       maxSurge: 1
       maxUnavailable: 1
     type: RollingUpdate
+  selector:
+    matchLabels:
+      app: echo-server
   template:
     metadata:
       labels:
@@ -18,11 +21,11 @@ spec:
       securityContext:
         runAsUser: 1000
       restartPolicy: Always
-      imagePullSecrets:
-      - name: gcr-json-key
+      # imagePullSecrets:
+      # - name: gcr-json-key
       containers:
-      - image: gcr.io/bitsx-vc-dev-poc/echo-server:v1
-        imagePullPolicy: Always
+      - image: echo-server
+        # imagePullPolicy: Always
         name: echo-server
         resources:
           requests:

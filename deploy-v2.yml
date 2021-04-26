@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: echo-server-v2
@@ -22,11 +22,11 @@ spec:
       securityContext:
         runAsUser: 1000
       restartPolicy: Always
-      imagePullSecrets:
-      - name: gcr-json-key
+      # imagePullSecrets:
+      # - name: gcr-json-key
       containers:
-      - image: gcr.io/bitsx-vc-dev-poc/echo-server:v2
-        imagePullPolicy: Always
+      - image: echo-server:v2
+        # imagePullPolicy: Always
         name: echo-server
         resources:
           requests:

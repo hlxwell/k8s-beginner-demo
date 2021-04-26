@@ -7,7 +7,7 @@ spec:
   imagePullSecrets:
   - name: gcr-json-key
   containers:
-  - image: gcr.io/bitsx-vc-dev-poc/echo-server:v1
+  - image: echo-server:v1
     imagePullPolicy: Always
     name: echo-server
     resources:

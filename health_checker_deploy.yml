@@ -20,7 +20,7 @@ spec:
       imagePullSecrets:
       - name: gcr-json-key
       containers:
-      - image: gcr.io/bitsx-vc-dev-poc/simple-health-checker
+      - image: simple-health-checker
         imagePullPolicy: Always
         name: health-checker
         resources:
