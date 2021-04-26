@@ -4,8 +4,8 @@ allow_k8s_contexts('workshop-cluster')
 k8s_yaml(['svc.yml', 'deploy.yml', 'health_checker_deploy.yml'])
 
 # Build: tell Tilt what images to build from which directories
-docker_build('gcr.io/bitsx-vc-dev-poc/echo-server', 'echo_server')
-docker_build('gcr.io/bitsx-vc-dev-poc/simple-health-checker', 'simple_health_checker')
+docker_build('echo-server', 'echo_server')
+docker_build('simple-health-checker', 'simple_health_checker')
 
 # Watch: tell Tilt how to connect locally
 k8s_resource('echo-server', port_forwards=1323)
