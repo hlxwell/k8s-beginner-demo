@@ -1,0 +1,18 @@
+apiVersion: skaffold/v2beta14
+kind: Config
+metadata:
+  name: k8s-demo
+build:
+  artifacts:
+  - image: echo_server
+    context: echo_server
+    docker:
+      dockerfile: Dockerfile
+  - image: simple_health_checker
+    context: simple_health_checker
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kustomize:
+    paths:
+    - kustomize-demo/overlays/dev
