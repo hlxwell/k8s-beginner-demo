@@ -14,7 +14,7 @@ WORKDIR $GOPATH/src/app/
 
 # Fetch dependencies.
 # Using go get.
-RUN go get -d -v
+RUN go mod tidy
 # Build the binary.
 RUN go build -o /go/bin/echo_server
 
