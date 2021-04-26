@@ -4,4 +4,3 @@ bases:
   - ../../base
 patchesStrategicMerge:
   - deploy.yml
-namePrefix: prod-
